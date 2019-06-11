@@ -1,0 +1,224 @@
+@media screen and (max-width: 768px) {
+    .user_edit_box {
+        padding: 10px;
+    }
+    .editor_user {
+        width: 80%;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        margin-left: 10px;
+    }
+}
+
+
+@media screen and (min-width: 768px) {
+    .user_edit_box {
+        padding: 40px;
+    }
+    .editor_user {
+        width: 90%;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        margin-left: 10px;
+    }
+}
+
+.getMd_info {
+    padding: 20px;
+    min-height:500px;
+}
+
+.free-reward-panel {
+    text-align: center;
+    margin-top: 30px;
+    padding: 0 0 30px 0;
+}
+
+.free-reward-panel p {
+    padding: 0 30px;
+    margin-bottom: 20px;
+    min-height: 24px;
+    font-size: 17px;
+    font-weight: 700;
+    color: #969696;
+}
+
+.free-reward-panel a {
+    margin-bottom: 20px;
+    padding: 8px 25px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #ea6f5a;
+    border-radius: 20px;
+}
+
+.free-reward-panel a:hover {
+    outline: none;
+    text-decoration: none;
+}
+
+.optionMoney {
+    margin: 0 5px 15px;
+    line-height: 54px;
+    border: 1px solid #E6E6E6;
+    border-radius: 4px;
+    font-weight: normal;
+    color: #999999;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 16px;
+}
+.amount {
+    font-size: 24px;
+}
+
+.piece {
+    font-size: 13px;
+}
+
+.input_piece {
+    width: 60%;
+    border: 0;
+    text-align: center;
+    outline: none;
+}
+
+.optionMoneyActive {
+    border-color: #EA6F5A;
+    color: #EA6F5A;
+}
+
+.reward-info {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: #EA6F5A;
+}
+
+.pay-method {
+    font-size: 14px;
+    color: #333333;
+    font-weight: 500;
+}
+
+.btn_pay {
+    padding: 8px 25px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #ea6f5a;
+    border-radius: 20px;
+    text-align: center;
+    width: 50%;
+    margin: 20px auto;
+}
+
+.btn_pay a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.getUserMoneyImg {
+    text-align: center;
+}
+
+.getUserMoneyImg img {
+    width: 160px;
+}
+
+.userSay_box {
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 4px;
+    margin-bottom: 40px;
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12), 0 3px 1px -2px rgba(0, 0, 0, .2);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12), 0 3px 1px -2px rgba(0, 0, 0, .2);
+}
+
+.userSay_title h3 {
+    font-weight: 600;
+    font-size: 24px;
+    margin: 0;
+}
+
+.userSay_comment {
+    padding: 20px;
+}
+
+.userImg img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+}
+
+.userSay_userName {
+    padding-left: 10px;
+}
+
+.userSay_userName p {
+    margin: 0;
+    padding: 0;
+}
+
+.gettime {
+    color: #969696;
+    font-size: 12px;
+}
+
+.userSay_title {
+    padding-left: 20px;
+}
+
+.userSay_title p {
+    font-size: 16px;
+}
+
+.user_edit_img img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+}
+
+.w-e-text-container {
+    height: 100px !important;
+    background-color: hsla(0, 0%, 71%, .1);
+    border: 0 !important;
+}
+
+.w-e-toolbar {
+    border: 0 !important;
+}
+
+.w-e-text {
+    overflow: auto !important;
+    border: 0 !important;
+}
+
+.btn_user_editor {
+    margin-right: 20px;
+    margin-top: 10px;
+    padding-top: 20px;
+}
+
+.btn_user_editor a {
+    padding: 8px 26px;
+    background-color: red;
+    border-radius: 20px;
+    color: #fff!important;
+    background-color: #42c02e;
+}
+
+.btn_user_editor a:hover {
+    text-decoration: none;
+}
+
+.comment_list {
+    margin-top: 20px;
+    padding: 5px 0 5px 20px;
+    margin-left: 40px;
+    border-left: 2px solid #d9d9d9;
+}
+
+.userSay_title a {
+    margin-left: 10px;
+}

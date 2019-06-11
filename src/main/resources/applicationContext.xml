@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.1.xsd">
+	<!-- 启用注解 -->
+	<context:annotation-config>
+		
+	</context:annotation-config>
+	<!-- 设置注解扫描路径 -->
+	<context:component-scan base-package="com.zjweu.service,com.zjweu.dao"></context:component-scan>
+	
+	<!-- 连接数据库，配置数据库连接池 -->
+	<!-- 配置数据源 -->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+	<!-- 驱动名字 -->
+	<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+	<!-- 数据库地址 -->
+	<property name="url" value="jdbc:mysql://localhost:3306/blog?useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false&amp;allowMultiQueries=true"></property>
+	<!-- 用户名 -->
+	<property name="username" value="root"></property>
+	<!-- 密码 -->
+	<property name="password" value="123456"></property>
+	<!-- 其他配置，数据库最大连接数 -->
+	<property name="maxActive" value="100"></property>
+	<!-- 最大空闲连接 -->
+	<property name="maxIdle" value="20"></property>
+	</bean>
+	
+	<!-- 配置SqlSessionFactory -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+	<!-- 注入数据库连接 -->
+	<property name="dataSource" ref="dataSource"></property>
+	<!-- 设置映射文件地址 -->
+	<property name="mapperLocations" value="classpath:mapper/*.xml"></property>
+	<!-- 设置别名包 -->
+	<property name="typeAliasesPackage" value="com.zjweu.entity"></property>
+	<!-- 分页 -->
+	 <property name="configLocation" value="classpath:mybatis-config.xml"></property> 
+	</bean>
+	
+	<!-- 配置dao -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+	<property name="basePackage" value="com.zjweu.dao"></property>
+	</bean>
+	
+	<!-- 配置数据库事务 -->
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+	<!-- 数据库连接注入 -->
+	<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	
+	<tx:annotation-driven transaction-manager="transactionManager"/>
+</beans>

@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zjweu.dao.ResponseMapper">
+  <resultMap id="BaseResultMap" type="com.zjweu.entity.Response">
+    <id column="rid" jdbcType="INTEGER" property="rid" />
+    <result column="comment_id" jdbcType="VARCHAR" property="commentId" />
+    <result column="reply_id" jdbcType="VARCHAR" property="replyId" />
+    <result column="reply_type" jdbcType="VARCHAR" property="replyType" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="form_id" jdbcType="VARCHAR" property="formId" />
+    <result column="to_uid" jdbcType="VARCHAR" property="toUid" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    rid, comment_id, reply_id, reply_type, content, form_id, to_uid
+  </sql>
+  <select id="selectByExample" parameterType="com.zjweu.entity.ResponseExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from blog_response
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from blog_response
+    where rid = #{rid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from blog_response
+    where rid = #{rid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.zjweu.entity.ResponseExample">
+    delete from blog_response
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.zjweu.entity.Response">
+    insert into blog_response (rid, comment_id, reply_id, 
+      reply_type, content, form_id, 
+      to_uid)
+    values (#{rid,jdbcType=INTEGER}, #{commentId,jdbcType=VARCHAR}, #{replyId,jdbcType=VARCHAR}, 
+      #{replyType,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, #{formId,jdbcType=VARCHAR}, 
+      #{toUid,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zjweu.entity.Response">
+    insert into blog_response
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="rid != null">
+        rid,
+      </if>
+      <if test="commentId != null">
+        comment_id,
+      </if>
+      <if test="replyId != null">
+        reply_id,
+      </if>
+      <if test="replyType != null">
+        reply_type,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="formId != null">
+        form_id,
+      </if>
+      <if test="toUid != null">
+        to_uid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="rid != null">
+        #{rid,jdbcType=INTEGER},
+      </if>
+      <if test="commentId != null">
+        #{commentId,jdbcType=VARCHAR},
+      </if>
+      <if test="replyId != null">
+        #{replyId,jdbcType=VARCHAR},
+      </if>
+      <if test="replyType != null">
+        #{replyType,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="formId != null">
+        #{formId,jdbcType=VARCHAR},
+      </if>
+      <if test="toUid != null">
+        #{toUid,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.zjweu.entity.ResponseExample" resultType="java.lang.Long">
+    select count(*) from blog_response
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update blog_response
+    <set>
+      <if test="record.rid != null">
+        rid = #{record.rid,jdbcType=INTEGER},
+      </if>
+      <if test="record.commentId != null">
+        comment_id = #{record.commentId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.replyId != null">
+        reply_id = #{record.replyId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.replyType != null">
+        reply_type = #{record.replyType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.content != null">
+        content = #{record.content,jdbcType=VARCHAR},
+      </if>
+      <if test="record.formId != null">
+        form_id = #{record.formId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.toUid != null">
+        to_uid = #{record.toUid,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update blog_response
+    set rid = #{record.rid,jdbcType=INTEGER},
+      comment_id = #{record.commentId,jdbcType=VARCHAR},
+      reply_id = #{record.replyId,jdbcType=VARCHAR},
+      reply_type = #{record.replyType,jdbcType=VARCHAR},
+      content = #{record.content,jdbcType=VARCHAR},
+      form_id = #{record.formId,jdbcType=VARCHAR},
+      to_uid = #{record.toUid,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zjweu.entity.Response">
+    update blog_response
+    <set>
+      <if test="commentId != null">
+        comment_id = #{commentId,jdbcType=VARCHAR},
+      </if>
+      <if test="replyId != null">
+        reply_id = #{replyId,jdbcType=VARCHAR},
+      </if>
+      <if test="replyType != null">
+        reply_type = #{replyType,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="formId != null">
+        form_id = #{formId,jdbcType=VARCHAR},
+      </if>
+      <if test="toUid != null">
+        to_uid = #{toUid,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where rid = #{rid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zjweu.entity.Response">
+    update blog_response
+    set comment_id = #{commentId,jdbcType=VARCHAR},
+      reply_id = #{replyId,jdbcType=VARCHAR},
+      reply_type = #{replyType,jdbcType=VARCHAR},
+      content = #{content,jdbcType=VARCHAR},
+      form_id = #{formId,jdbcType=VARCHAR},
+      to_uid = #{toUid,jdbcType=VARCHAR}
+    where rid = #{rid,jdbcType=INTEGER}
+  </update>
+</mapper>

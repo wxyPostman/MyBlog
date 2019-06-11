@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+<title>不是邮差</title>
+
+<!-- Bootstrap -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="css/animate.min.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/info.css">
+<link rel="stylesheet" href="css/markdown.css" />
+<!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+<!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+<!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+	<div class=" box">
+		<div class="slide_left animated fadeInDown">
+			<div class="title_box">
+				<div class="title_image   animated rubberBand">
+					<img src="images/userimg.jpg" alt="user">
+				</div>
+				<div class="title_text">
+					<h3>不是邮差</h3>
+					<p>岁月轻狂，愿你可以笑看夕阳</p>
+					<p>
+						<a href="https://weibo.com/u/2912479215"> <i
+							class=" fa fa-weibo" aria-hidden="true"></i>
+						</a> <a href="https://github.com/wxyPostman"> <i
+							class="fa fa-github" aria-hidden="true"></i>
+						</a>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="slide_right  animated fadeInDown ">
+			<div class="page_top_nav">
+				<ul class="navtop clearfix">
+					<li class="active_a">
+						<a href="index.html">
+							首页
+						</a>
+					</li>
+					<li>
+						<a href="search.html">
+							搜索
+						</a>
+					</li>
+					<li>
+						<a href="chat.html">
+							趣聊
+						</a>
+					</li>
+					<li>
+						<a href="archives.html">
+							归档
+						</a>
+					</li>
+					<li class="pull-right login_register" id="login_success">
+					<a href="#" data-toggle="modal" data-target="#loginModel"> 登录 </a> <a href="#"
+						data-toggle="modal" data-target="#registerModel"> 注册 </a></li>
+					<li class="pull-right login_register " id="login_register">
+						<div class="userinfo_img" id="getImg">
+						</div>
+					</li>
+				</ul>
+				<div class="goOutBox clearfix animated fadeInDown" id="goOutBox">
+					<div class="getOut">
+						<a href="user.html"> <i class="fa fa-user-o" aria-hidden="true"></i>
+							个人中心
+						</a>
+					</div>
+					<div class="getOut">
+						<a href="file.html"> <i class="fa fa-file-o" aria-hidden="true"></i>
+							文档修改
+						</a>
+					</div>
+					<div class="getOut">
+						<a href="javascript:exit();"> <i class="fa fa-sign-out" aria-hidden="true"></i>
+							退出
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="margin_left_33 animated fadeInDown clearfix">
+			<div class="slide_right_post clearfix animated fadeInDown">
+				<!-- 插入后台解析的md数据 -->
+				<div class="getMd_info" id="getMd_info">
+					<div class="base" id="base">
+						<div class="cube"></div>
+						<div class="cube"></div>
+						<div class="cube"></div>
+						<div class="cube"></div>
+						<div class="cube"></div>
+						<div class="cube"></div>
+						<div class="cube"></div>
+						<div class="cube"></div>
+						<div class="cube"></div>
+					</div>
+				</div>
+				<!-- 用户赞赏部分 -->
+				<div class="free-reward-panel">
+					<p>小礼物走一走,赞赏一波</p>
+					<a href="#" data-toggle="modal" data-target="#getRewardModel">
+						赞赏支持 </a>
+				</div>
+				<hr />
+				<!-- 用户评论部分 -->
+				<div class="user_edit_box clearfix">
+					<div class="user_edit_img pull-left">
+						<img src="images/3.png" alt="user">
+					</div>
+					<div id="editor" class="pull-left editor_user"></div>
+					<div class="btn_user_editor pull-right">
+						<a href="Javascript:;" id="getComment"> 发表 </a>
+					</div>
+				</div>
+
+
+				<div class="userSay_box">
+					<div class="userSay_title">
+						<h3>评论</h3>
+						<hr />
+					</div>
+					<!-- 评论显示部分 -->
+
+					<div class="userSay_box clearfix" id="userSay_box">
+						
+						<!-- <a href="#" data-toggle="modal" data-target="#textModel"> <i
+								class="fa fa-comment-o" aria-hidden="true"></i> <span> 回复
+							</span>
+							</a> -->
+					<!-- 	<div class="comment_list">
+							<p>
+								<a href="#"> 吴彦祖 </a> <span> 回复 </span> <a href="#"> 温一一 </a> :
+								<span> 我认同你的看法 </span>
+							</p>
+							<p class="gettime">
+								<span> 2019.05.29 17:26 </span> &nbsp;&nbsp; <a href="#"
+									data-toggle="modal" data-target="#textModel"> <i
+									class="fa fa-comment-o" aria-hidden="true"></i> <span>
+										回复 </span>
+								</a>
+							</p>
+						</div> -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--Login Modal -->
+	<div class="modal fade  bs-example-modal-sm" id="loginModel"
+		tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+		<div class="modal-dialog  modal-sm" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="loginMyModalLabel">登录</h4>
+				</div>
+				<div class="modal-body">
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="请输入手机号"
+							aria-describedby="basic-addon1" id="login_phone"> <span
+							class="animated fadeInRight login-register-wrong" id="loginTip">
+
+						</span>
+					</div>
+					<div class="input-group">
+						<input type="password" class="form-control" placeholder="请输入密码"
+							aria-describedby="basic-addon1" id="login_password"> <span
+							class="animated fadeInRight login-register-wrong"
+							id="loginpasseordTip"> </span>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" id="login_btn">
+						登录</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--register Modal -->
+	<div class="modal fade  bs-example-modal-sm" id="registerModel"
+		tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+		<div class="modal-dialog  modal-sm" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="registerMyModalLabel">注册</h4>
+				</div>
+				<div class="modal-body">
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="请输入用户名"
+							aria-describedby="basic-addon1" id="register_username"> <span
+							class="animated fadeInRight login-register-wrong"
+							id="usernameTip"> </span>
+					</div>
+					<div class="input-group">
+						<input type="password" class="form-control" placeholder="请输入密码"
+							aria-describedby="basic-addon1" id="register_password"> <span
+							class="animated fadeInRight login-register-wrong"
+							id="passwordTip"> </span>
+					</div>
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="请输入手机号"
+							aria-describedby="basic-addon1" id="register_phone"> <span
+							class="animated fadeInRight login-register-wrong" id="phoneTip">
+
+						</span>
+					</div>
+					<div class="input-group">
+						<input class="getRegisterNumber" type="button" value="获取验证码"
+							id="get_phone_num">
+					</div>
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="请输入验证码"
+							aria-describedby="basic-addon1" id="captcha"> <span
+							class="animated fadeInRight login-register-wrong" id="captchaTip">
+						</span>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" id="register_btn">确定</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 赞赏模态框 -->
+	<div class="modal fade " id="getRewardModel" tabindex="-1"
+		role="dialog" aria-labelledby="mySmallModalLabel">
+		<div class="modal-dialog " role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="container-fluid">
+						<div class="row">
+							<!-- 当支付时候出现的二维码 -->
+							<div class="col-sm-12 col-xs-12">
+								<div class="getUserMoneyImg">
+									<img src="images/money.png" alt="....">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<div class="reward-info">
+						 <span class="pay-method">
+							用微信支付 </span>
+					</div>
+					<div class="btn_pay">
+						<a href="#"> 立即支付 </a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--回复评论框 -->
+	<div class="modal fade  bs-example-modal-sm" id="textModel"
+		tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+		<div class="modal-dialog  modal-sm" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="textMyModalLabel">回复</h4>
+				</div>
+				<div class="modal-body">
+					<div id="editor1" class="textModel_editor"></div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary">确定</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+	<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+	<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/index.js"></script>
+	<script src="js/register.js"></script>
+	<!-- md插件 -->
+	<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+	<!-- wangedit 插件 -->
+	<script src="js/wangEditor.js"></script>
+	<script src="js/comment.js"></script>
+	<script src="js/readFile.js"></script>
+    <script type="text/javascript" src="js/changImg.js"></script>
+
+</body>
+
+</html>

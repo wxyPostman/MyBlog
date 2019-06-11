@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE generatorConfiguration  
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"  
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+	<!--MySQL连接驱动 -->
+	<classPathEntry location="C://workspaces//lib//mysql-connector-java-5.1.47.jar" />
+
+	
+	<!--数据库链接URL，用户名、密码 -->
+	<context id="postmanblog" targetRuntime="Mybatis3">
+		<commentGenerator>
+			<property name="suppressDate" value="true" />
+			<!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+		
+		<!-- 数据库连接 -->
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost/blog" userId="root" password="123456">
+		</jdbcConnection>
+
+		<!--是否启用java.math.BigDecimal -->
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<!-- 实体配置 -->
+		<javaModelGenerator targetPackage="com.zjweu.entity"
+			targetProject="postmanblog/src/main/java">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+		<!-- 映射xml文件 -->
+		<sqlMapGenerator targetPackage="mapper"
+			targetProject="postmanblog/src/main/resources">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+
+		<!-- dao配置 -->
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.zjweu.dao" targetProject="postmanblog/src/main/java">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+
+		<!-- 表的配置 -->
+		<table tableName="blog_admire" domainObjectName="Admire" enableCountByExample="true"
+			enableUpdateByExample="true" enableDeleteByExample="true"
+			enableSelectByExample="true" selectByExampleQueryId="true">
+		</table>
+		
+		<table tableName="blog_baseinfo" domainObjectName="BaseInfo" enableCountByExample="true"
+			enableUpdateByExample="true" enableDeleteByExample="true"
+			enableSelectByExample="true" selectByExampleQueryId="true">
+		</table>
+		
+		<table tableName="blog_comment" domainObjectName="Comment" enableCountByExample="true"
+			enableUpdateByExample="true" enableDeleteByExample="true"
+			enableSelectByExample="true" selectByExampleQueryId="true">
+		</table>
+		
+		<table tableName="blog_content" domainObjectName="Content" enableCountByExample="true"
+			enableUpdateByExample="true" enableDeleteByExample="true"
+			enableSelectByExample="true" selectByExampleQueryId="true">
+		</table>
+		
+		<table tableName="blog_img" domainObjectName="Image" enableCountByExample="true"
+			enableUpdateByExample="true" enableDeleteByExample="true"
+			enableSelectByExample="true" selectByExampleQueryId="true">
+		</table>
+		
+		<table tableName="blog_register" domainObjectName="Register" enableCountByExample="true"
+			enableUpdateByExample="true" enableDeleteByExample="true"
+			enableSelectByExample="true" selectByExampleQueryId="true">
+		</table>
+		
+		<table tableName="blog_response" domainObjectName="Response" enableCountByExample="true"
+			enableUpdateByExample="true" enableDeleteByExample="true"
+			enableSelectByExample="true" selectByExampleQueryId="true">
+		</table>
+		
+	</context>
+</generatorConfiguration>  
