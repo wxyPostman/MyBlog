@@ -21,3 +21,4 @@ postmanblog
 ![](http://psxg2s26y.bkt.clouddn.com/a2.png)
 
 其中加入了图灵机器人可实现聊天
+![](http://psxg2s26y.bkt.clouddn.com/weixin.png)
