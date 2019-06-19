@@ -12,6 +12,8 @@ postmanblog
 
 **内容部分展示**
 
+![](http://psxg2s26y.bkt.clouddn.com/seacher1.png)
+
 由于截长图 左边头像出现了点小问题
 
 ![](http://psxg2s26y.bkt.clouddn.com/blog-content-html.png)
@@ -22,3 +24,4 @@ postmanblog
 
 其中加入了图灵机器人可实现聊天
 ![](http://psxg2s26y.bkt.clouddn.com/weixin.png)
+![](http://psxg2s26y.bkt.clouddn.com/0190619165257.png)
